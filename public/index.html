@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <title>viewport-funcs</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png">
+    <style type="text/css">
+      body { margin: 30px; }
+      .card {
+        z-index: 1;
+        position: fixed;
+        top: 50px;
+        padding: 10px;
+        background-color: #eee;
+      }
+      .rect { left: 50px; }
+      .margins { left: 210px; }
+      .contains { left: 370px; }
+      .square {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+      }
+      .red {
+        left: 520px;
+        top: 600px;
+        background-color: #f00;
+      }
+      .green {
+        left: -20px;
+        top: 20px;
+        background-color: #0f0;
+      }
+      .blue {
+        left: 1200px;
+        top: 1200px;
+        background-color: #00f;
+      }
+      .none { display: none; }
+      h4 { margin: 0 0 8px 0; }
+      input {
+        font-size: 24px;
+        outline: none;
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      table {
+        font-family: monospace;
+        padding: 7px;
+        margin: 0;
+        background-color: #fff;
+        border: 1px solid #bbb;
+        color: rgb(28, 0, 207);
+      }
+      table tr td:first-child {
+        text-align: right;
+        color: rgb(136, 19, 145);
+      }
+    </style>
+  </head>
+  <body>
+    <div class='card rect'>
+      <h4>rect</h4>
+      <table>
+        <tr>
+          <td>width :</td><td width>...</td>
+        </tr>
+        <tr>
+          <td>height :</td><td height>...</td>
+        </tr>
+        <tr>
+          <td>left :</td><td left>...</td>
+        </tr>
+        <tr>
+          <td>top :</td><td top>...</td>
+        </tr>
+        <tr>
+          <td>right :</td><td right>...</td>
+        </tr>
+        <tr>
+          <td>bottom :</td><td bottom>...</td>
+        </tr>
+      </table>
+    </div>
+    <div class='card margins'>
+      <h4>margins</h4>
+      <table>
+        <tr>
+          <td>width :</td><td width>...</td>
+        </tr>
+        <tr>
+          <td>height :</td><td height>...</td>
+        </tr>
+        <tr>
+          <td>left :</td><td left>...</td>
+        </tr>
+        <tr>
+          <td>top :</td><td top>...</td>
+        </tr>
+        <tr>
+          <td>right :</td><td right>...</td>
+        </tr>
+        <tr>
+          <td>bottom :</td><td bottom>...</td>
+        </tr>
+      </table>
+    </div>
+    <div class='card contains'>
+      <h4>contains</h4>
+      <input offset type="number" min="-20" max="300" step="10" value="0"/>
+      <table>
+        <tr>
+          <td>red&nbsp;:</td><td red>...</td>
+        </tr>
+        <tr>
+          <td>blue&nbsp;:</td><td blue>...</td>
+        </tr>
+        <tr>
+          <td>green&nbsp;:</td><td green>...</td>
+        </tr>
+        <tr>
+          <td>none&nbsp;:</td><td none>...</td>
+        </tr>
+        <tr>
+          <td>created&nbsp;:</td><td created>...</td>
+        </tr>
+      </table>
+    </div>
+    <div class='square red'></div>
+    <div class='square blue'></div>
+    <div class='square green'></div>
+    <div class='square none'></div>
+    <img src="baboon.jpg">
+
+    <script src="bundle.js"></script>
+  </body>
+</html>
