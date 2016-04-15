@@ -10,6 +10,10 @@ npm i viewport-funcs
 
 ## API
 
+* [rect](#rect)
+* [margins](#margins)
+* [contains](#containsel-offset)
+
 #### rect()
 
 Get the viewport size and position
@@ -86,7 +90,7 @@ The returned object is internally cached to boost performance
 
 Check if the element `el` is in the viewport, return a boolean
 
-The argument `offset` is optional and must be `>= 0`, default to `0`
+The argument `offset` is optional, default to `0`
 
 ```js
 const contains = require('browser-funcs').contains

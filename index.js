@@ -16,7 +16,7 @@ var cache = {
 
 function rect() {
   if (Date.now() - cache.rect.prev > 10) {
-    return {
+    cache.rect.data = {
        width: window.innerWidth,
       height: window.innerHeight,
         left: window.scrollX,
@@ -66,7 +66,7 @@ function contains(el, offset) {
     || el.offsetHeight == 0
     || el.getClientRects().length == 0) return false
 
-  offset = offset == undefined ? 0 : safe(offset)
+  offset = safe(offset)
   var r = el.getBoundingClientRect()
 
   return r.right  >= -offset
@@ -76,7 +76,7 @@ function contains(el, offset) {
 }
 
 function safe(offset) {
-  return typeof offset != 'number' || offset !== offset || offset < 0
+  return offset == undefined || typeof offset != 'number' || offset !== offset
     ? 0
     : offset
 }
