@@ -29,6 +29,8 @@
       .green {
         left: -20px;
         top: 20px;
+        /* no size */
+        height: 0;
         background-color: #0f0;
       }
       .blue {
@@ -41,9 +43,16 @@
       input {
         font-size: 24px;
         outline: none;
+        margin-bottom: 10px;
+      }
+      input[offset] {
         display: block;
         width: 100%;
-        margin-bottom: 10px;
+      }
+      label {
+        -webkit-user-select: none;
+        -moz-user-select: -moz-none;
+        user-select: none;
       }
       table {
         font-family: monospace;
@@ -109,6 +118,7 @@
     <div class='card contains'>
       <h4>contains</h4>
       <input offset type="number" min="-20" max="300" step="10" value="0"/>
+      <input checksize type="checkbox" id="checksize"/><label for="checksize">checksize</label>
       <table>
         <tr>
           <td>red&nbsp;:</td><td red>...</td>

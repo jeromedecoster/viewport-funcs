@@ -60,11 +60,12 @@ function margins() {
   return cache.margins.data
 }
 
-function contains(el, offset) {
+function contains(el, offset, checksize) {
   if (!document.body.contains(el)
-    || el.offsetWidth == 0
-    || el.offsetHeight == 0
     || el.getClientRects().length == 0) return false
+
+  if (checksize === true
+    && (el.offsetWidth == 0 || el.offsetHeight == 0)) return false
 
   offset = safe(offset)
   var r = el.getBoundingClientRect()

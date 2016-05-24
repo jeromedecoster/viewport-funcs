@@ -61,11 +61,12 @@ function margins() {
   return cache.margins.data
 }
 
-function contains(el, offset) {
+function contains(el, offset, checksize) {
   if (!document.body.contains(el)
-    || el.offsetWidth == 0
-    || el.offsetHeight == 0
     || el.getClientRects().length == 0) return false
+
+  if (checksize === true
+    && (el.offsetWidth == 0 || el.offsetHeight == 0)) return false
 
   offset = safe(offset)
   var r = el.getBoundingClientRect()
@@ -135,11 +136,12 @@ var created = document.createElement('img')
 function containsLog() {
   var el = document.querySelector('.contains')
   var offset = +el.querySelector('input[offset]').value
-  el.querySelector('td[red]').textContent     = contains(red, offset)
-  el.querySelector('td[green]').textContent   = contains(green, offset)
-  el.querySelector('td[blue]').textContent    = contains(blue, offset)
-  el.querySelector('td[none]').textContent    = contains(none, offset)
-  el.querySelector('td[created]').textContent = contains(created, offset)
+  var checked = el.querySelector('input[checksize]').checked
+  el.querySelector('td[red]').textContent     = contains(red,     offset, checked)
+  el.querySelector('td[green]').textContent   = contains(green,   offset, checked)
+  el.querySelector('td[blue]').textContent    = contains(blue,    offset, checked)
+  el.querySelector('td[none]').textContent    = contains(none,    offset, checked)
+  el.querySelector('td[created]').textContent = contains(created, offset, checked)
 }
 
 containsLog()

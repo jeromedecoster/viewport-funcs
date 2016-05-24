@@ -61,7 +61,7 @@ The example below shows:
 * how to get the document width and height
 
 ```js
-const viewport = require('browser-funcs').viewport
+const viewport = require('viewport-funcs').viewport
 
 // {width: 591, height: 328, left: 0, top: 56, right: 0, bottom: 316}
 var data = viewport()
@@ -86,14 +86,18 @@ The returned object is internally cached to boost performance
 
 ---
 
-#### contains(el, [offset])
+#### contains(el, [offset], [checksize])
 
 Check if the element `el` is in the viewport, return a boolean
 
 The argument `offset` is optional, default to `0`
 
+The argument `checksize` is optional, default to `false`
+
+If `checksize` is `true` and the element has no size (an empty div or an img with no src), `contains` will always return `false`
+
 ```js
-const contains = require('browser-funcs').contains
+const contains = require('viewport-funcs').contains
 
 var el = document.querySelector('.rect')
 

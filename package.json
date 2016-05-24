@@ -1,6 +1,6 @@
 {
   "name": "viewport-funcs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A very limited subset of viewport functions I use every day",
   "repository": "jeromedecoster/viewport-funcs",
   "main": "index.js",
@@ -17,6 +17,8 @@
     "margins",
     "contains"
   ],
+  "author": "",
+  "license": "MIT",
   "scripts": {
     "start": "browser-sync start --server public --no-ui --no-notify",
     "dev": "node scripts/dev",
@@ -26,7 +28,5 @@
     "browser-sync": "^2.11.2",
     "browserify": "^13.0.0",
     "watchify": "^3.7.0"
-  },
-  "author": "",
-  "license": "MIT"
+  }
 }
