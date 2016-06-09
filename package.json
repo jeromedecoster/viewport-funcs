@@ -1,6 +1,6 @@
 {
   "name": "viewport-funcs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A very limited subset of viewport functions I use every day",
   "repository": "jeromedecoster/viewport-funcs",
   "main": "index.js",
@@ -8,7 +8,8 @@
     "cache.js",
     "contains.js",
     "index.js",
-    "margins.js"
+    "margins.js",
+    "rect.js"
   ],
   "keywords": [
     "browser",
