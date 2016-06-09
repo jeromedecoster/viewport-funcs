@@ -1,7 +1,6 @@
-
-const contains = require('..').contains
-const margins  = require('..').margins
-const rect     = require('..').rect
+const contains = require('../contains')
+const margins  = require('../margins')
+const rect     = require('../rect')
 
 //
 // RECT

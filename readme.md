@@ -8,34 +8,42 @@
 npm i viewport-funcs
 ```
 
+Package [on npm](https://www.npmjs.com/package/viewport-funcs)
+
+## require
+
+```js
+// require all functions
+const contains = require('viewport-funcs').contains
+
+// require only the single function (recommanded)
+const contains = require('viewport-funcs/contains')
+```
+
 ## API
 
-* [rect](#rect)
-* [margins](#margins)
 * [contains](#containsel-offset)
+* [margins](#margins)
+* [rect](#rect)
 
-#### rect()
+#### contains(el, [offset], [checksize])
 
-Get the viewport size and position
+Check if the element `el` is in the viewport, return a boolean
 
-`left`, `top`, `right` and `bottom` are relative to the top-left of the document
+The argument `offset` is optional, default to `0`
 
-The object returned contains:
+The argument `checksize` is optional, default to `false`
 
-| Key | Value |
-| :------ | :------- |
-| **width** | the viewport width |
-| **height** | the viewport height |
-| **left** | the distance between the left of the document and the left of the viewport |
-| **top** | the distance between the top of the document and the top of the viewport |
-| **right** | the distance between the left of the document and the right of the viewport |
-| **bottom** | the distance between the top of the document and the bottom of the viewport |
+If `checksize` is `true` and the element has no size (an empty div or an img with no src), `contains` will always return `false`
 
-This means:
-* `right` = `left` + `width`
-* `bottom` = `top` + `height`
+```js
+const contains = require('viewport-funcs/contains')
 
-The returned object is internally cached to boost performance
+var el = document.querySelector('.rect')
+
+// true if the element is fully or partially in the viewport
+contains(el)
+```
 
 ---
 
@@ -61,10 +69,10 @@ The example below shows:
 * how to get the document width and height
 
 ```js
-const viewport = require('viewport-funcs').viewport
+const margins = require('viewport-funcs/margins')
 
 // {width: 591, height: 328, left: 0, top: 56, right: 0, bottom: 316}
-var data = viewport()
+var data = margins()
 
 /*
 the viewport bottom-right corner location
@@ -86,23 +94,34 @@ The returned object is internally cached to boost performance
 
 ---
 
-#### contains(el, [offset], [checksize])
+#### rect()
 
-Check if the element `el` is in the viewport, return a boolean
+Get the viewport size and position
 
-The argument `offset` is optional, default to `0`
+`left`, `top`, `right` and `bottom` are relative to the top-left of the document
 
-The argument `checksize` is optional, default to `false`
+The object returned contains:
 
-If `checksize` is `true` and the element has no size (an empty div or an img with no src), `contains` will always return `false`
+| Key | Value |
+| :------ | :------- |
+| **width** | the viewport width |
+| **height** | the viewport height |
+| **left** | the distance between the left of the document and the left of the viewport |
+| **top** | the distance between the top of the document and the top of the viewport |
+| **right** | the distance between the left of the document and the right of the viewport |
+| **bottom** | the distance between the top of the document and the bottom of the viewport |
+
+This means:
+* `right` = `left` + `width`
+* `bottom` = `top` + `height`
+
+The returned object is internally cached to boost performance
 
 ```js
-const contains = require('viewport-funcs').contains
+const rect = require('viewport-funcs/rect')
 
-var el = document.querySelector('.rect')
-
-// true if the element is fully or partially in the viewport
-contains(el)
+// {width: 800, height: 600, left: 10, top: 10, right: 810, bottom: 610}
+rect()
 ```
 
 ## Thanks
