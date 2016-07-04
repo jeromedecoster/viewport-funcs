@@ -49,7 +49,7 @@ var created = document.createElement('img')
 function containsLog() {
   var el = document.querySelector('.contains')
   var offset = +el.querySelector('input[offset]').value
-  var checked = el.querySelector('input[checksize]').checked
+  var checked = el.querySelector('input[check]').checked
   el.querySelector('td[red]').textContent     = contains(red,     offset, checked)
   el.querySelector('td[green]').textContent   = contains(green,   offset, checked)
   el.querySelector('td[blue]').textContent    = contains(blue,    offset, checked)

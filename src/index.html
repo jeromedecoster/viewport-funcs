@@ -38,7 +38,13 @@
         top: 1200px;
         background-color: #00f;
       }
-      .none { display: none; }
+      .none {
+        left: 20px;
+        top: 20px;
+        background-color: #f0f;
+        /* not visible */
+        display: none;
+      }
       h4 { margin: 0 0 8px 0; }
       input {
         font-size: 24px;
@@ -118,7 +124,7 @@
     <div class='card contains'>
       <h4>contains</h4>
       <input offset type="number" min="-20" max="300" step="10" value="0"/>
-      <input checksize type="checkbox" id="checksize"/><label for="checksize">checksize</label>
+      <input check type="checkbox" id="check"/><label for="check">check</label>
       <table>
         <tr>
           <td>red&nbsp;:</td><td red>...</td>

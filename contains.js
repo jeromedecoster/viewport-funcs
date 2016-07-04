@@ -1,13 +1,12 @@
-const isNumber = require('is-funcs/is-number')
+const setNumber = require('set-funcs/set-number')
 const isNode = require('is-funcs/is-node')
 
-module.exports = function(el, offset, checksize) {
-  if (isNode(el) === false) return false
+module.exports = function(el, offset, check) {
+  if (check === true) {
+    if (isNode(el) === false || el.offsetWidth == 0 || el.offsetHeight == 0) return false
+  }
 
-  if (checksize === true
-    && (el.offsetWidth == 0 || el.offsetHeight == 0)) return false
-
-  offset = isNumber(offset) ? offset : 0
+  offset = setNumber(offset)
   var r = el.getBoundingClientRect()
 
   return r.right  >= -offset

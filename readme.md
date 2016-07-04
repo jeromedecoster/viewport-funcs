@@ -10,31 +10,26 @@ npm i viewport-funcs
 
 Package [on npm](https://www.npmjs.com/package/viewport-funcs)
 
-## require
-
-```js
-// require all functions
-const contains = require('viewport-funcs').contains
-
-// require only the single function (recommanded)
-const contains = require('viewport-funcs/contains')
-```
-
 ## API
 
 * [contains](#containsel-offset)
 * [margins](#margins)
 * [rect](#rect)
 
-#### contains(el, [offset], [checksize])
+#### contains(el, [offset], [check])
 
-Check if the element `el` is in the viewport, return a boolean
+Check if `el` is in the viewport, return a boolean
 
-The argument `offset` is optional, default to `0`
+| Argument | Action |
+| :------ | :------- |
+| **el** | the tested **Html Element** `el` |
+| **offset** | optional `offset`, default to `0`  |
+| **check** | optional `check`, default to `false`. If `true` performs multiple tests explained below  |
 
-The argument `checksize` is optional, default to `false`
+If `check` is `true`, safer but slower tests are performed
 
-If `checksize` is `true` and the element has no size (an empty div or an img with no src), `contains` will always return `false`
+* check if `el` is a **Html Element**, with nodeType 1 and landed in the document.body
+* check if `el` has no size. An empty or a `display:none` div or an img with no src will always return `false`
 
 ```js
 const contains = require('viewport-funcs/contains')

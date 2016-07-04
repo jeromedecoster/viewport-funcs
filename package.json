@@ -1,13 +1,11 @@
 {
   "name": "viewport-funcs",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A very limited subset of viewport functions I use every day",
   "repository": "jeromedecoster/viewport-funcs",
-  "main": "index.js",
   "files": [
     "cache.js",
     "contains.js",
-    "index.js",
     "margins.js",
     "rect.js"
   ],
@@ -35,6 +33,7 @@
     "budo": "^8.3.0"
   },
   "dependencies": {
-    "is-funcs": "^0.2.1"
+    "is-funcs": "^0.4.1",
+    "set-funcs": "^0.1.0"
   }
 }
