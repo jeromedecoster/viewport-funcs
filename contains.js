@@ -3,7 +3,7 @@ const isNode = require('is-funcs/is-node')
 
 module.exports = function(el, offset, check) {
   if (check === true) {
-    if (isNode(el) === false || el.offsetWidth == 0 || el.offsetHeight == 0) return false
+    if (isNode(el, true) === false || el.offsetWidth == 0 || el.offsetHeight == 0) return false
   }
 
   offset = setNumber(offset)
